@@ -1,19 +1,19 @@
 package model;
 
-public class Usuario {
+public class Pessoa {
 	private int codigo;
 	private String login;
 	private String senha;
 	private char sexo;
 	
-	public Usuario() {
+	public Pessoa() {
 		this.codigo = -1;
 		this.login = "";
 		this.senha = "";
 		this.sexo = '*';
 	}
 	
-	public Usuario(int codigo, String login, String senha, char sexo) {
+	public Pessoa(int codigo, String login, String senha, char sexo) {
 		this.codigo = codigo;
 		this.login = login;
 		this.senha = senha;

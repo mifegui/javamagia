@@ -3,17 +3,17 @@ package app;
 import java.util.List;
 
 import dao.DAO;
-import dao.UsuarioDAO;
-import model.Usuario;
+import dao.PessoaDAO;
+import model.Pessoa;
 
 public class Aplicacao {
 	
 	public static void main(String[] args) throws Exception {
 		
-		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		PessoaDAO usuarioDAO = new PessoaDAO();
 		
 		System.out.println("\n\n==== Inserir usuário === ");
-		Usuario usuario = new Usuario(11, "pablo", "pablo",'M');
+		Pessoa usuario = new Pessoa(11, "pablo", "pablo",'M');
 		if(usuarioDAO.insert(usuario) == true) {
 			System.out.println("Inserção com sucesso -> " + usuario.toString());
 		}
@@ -22,8 +22,8 @@ public class Aplicacao {
 		System.out.println("Usuário (" + usuario.getLogin() + "): " + usuarioDAO.autenticar("pablo", "pablo"));
 			
 		System.out.println("\n\n==== Mostrar usuários do sexo masculino === ");
-		List<Usuario> usuarios = usuarioDAO.getSexoMasculino();
-		for (Usuario u: usuarios) {
+		List<Pessoa> usuarios = usuarioDAO.getSexoMasculino();
+		for (Pessoa u: usuarios) {
 			System.out.println(u.toString());
 		}
 
@@ -39,7 +39,7 @@ public class Aplicacao {
 
 		System.out.println("\n\n==== Mostrar usuários ordenados por código === ");
 		usuarios = usuarioDAO.getOrderByCodigo();
-		for (Usuario u: usuarios) {
+		for (Pessoa u: usuarios) {
 			System.out.println(u.toString());
 		}
 		
@@ -48,7 +48,7 @@ public class Aplicacao {
 		
 		System.out.println("\n\n==== Mostrar usuários ordenados por login === ");
 		usuarios = usuarioDAO.getOrderByLogin();
-		for (Usuario u: usuarios) {
+		for (Pessoa u: usuarios) {
 			System.out.println(u.toString());
 		}
 	}
